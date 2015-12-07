@@ -1,0 +1,27 @@
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+{% endblock %}
+{% block content %}
+<div id="results-container" class="container">
+    <div id="band-container">
+        <h2>Introducing the rockin' new {{genre}} band....</h2>
+        <h1>{{bandName}}</h1>
+    </div>
+    <br/>
+    <div id="member-container">
+        <h3>Featuring...</h3>
+        <div class="row text-center">
+            {% for member in members %}
+            <div class="col-xs-4">
+                <h3><strong>{{member.name}}</strong></h3>
+                <h4>on the <strong>{{member.instrument}}</strong></h4>
+                <br/>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="/"><h2>Try again!</h2></a>
+    </div>
+</div>
+{% endblock %}
