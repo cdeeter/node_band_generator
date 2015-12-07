@@ -3,3 +3,5 @@ Generates a random band name and band members based on genre (punk, metal, emo) 
 
 <h3>Set up</h3>
 Run <code>npm install</code> and then <code>node server.js</code> to start the Node server and access the project at localhost:8000
+
+<a href="https://www.thinkful.com/learn-node-for-free/" target="_blank">#25daysofnode</a>
