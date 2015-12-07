@@ -4,7 +4,6 @@ var path = require("path");
 var swig = require("swig");
 var bodyParser = require("body-parser");
 var app = express();
-var router = express().Router;
 
 // Require body parser for form
 app.use(bodyParser());
@@ -96,7 +95,7 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-// Process form
+// Process band generator form
 app.post("/bandResult", function(req, res) {
     // Get genre the user clicked
     var genre = req.body.genre;
@@ -122,9 +121,6 @@ app.post("/bandResult", function(req, res) {
     res.render("band", bandInfo);
 });
 
-// Listen on port 8080
-app.listen(8000);
-
 // Middleware for error handling
 app.use(function(err, req, res, next) {
     if (err) {
@@ -133,3 +129,6 @@ app.use(function(err, req, res, next) {
                         "select a genre and at least one instrument.<br/><br/><a href='/'>Go Back</a>");
     } 
 });
+
+// Listen on port 8000
+app.listen(8000);
